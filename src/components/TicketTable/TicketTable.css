@@ -1,0 +1,195 @@
+.ticket-table-header {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.ticket-table-div {
+    width: 100%;
+}
+.ticket-link {
+    text-decoration: none !important;
+}
+.ticket-row {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #eee;
+    border-top: none;
+    color: #555;
+    padding: 10px;
+    text-decoration: none !important;
+    transition: background-color .2s ease;
+    display: table-row;
+    font-weight: 600;
+}
+.ticket-row:hover {
+    background-color: #eee;
+  }
+.ticket-row div {
+    display: inline-block;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 5px;
+}
+
+.ticket-row-header {
+    box-shadow: 1px 2px #eee;
+    border: 1px solid black;
+    display: table-row;
+}
+
+.ticket-row-header:hover {
+    background-color: #fff;
+}
+
+.ticket-row-header div {
+    padding-top: 2px;
+}
+
+.id-column {
+    width: 100px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+.customer-column {
+    font-weight: 600;
+    overflow: hidden;
+    width: 200px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    color: black;
+}
+
+.customer-column-header {
+    color: #555;
+    width: 300px;   
+}
+
+.customer-name {
+    display: inline-block;
+    margin-left: 55px;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+.date-column {
+    width: 150px;
+    cursor: pointer;
+}
+.assigned-column {
+    width: 150px;
+    
+}
+
+.subject-column {
+    width: 400px;
+}
+
+.status-column {
+    width: 200px;
+}
+.sort-icon {
+    margin-left: 5px;
+    color: #ccc;
+}
+
+#ticket-table thead tr {
+    height: 40px;
+}
+
+#ticket-table tbody tr {
+    cursor: pointer;
+}
+
+.ticket-table {
+    border: 1px solid #ccc !important;
+    border-radius: 15px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    
+}
+
+.per-page-div {
+    margin-left: 30px;
+}
+.per-page-select {
+    display: inline-block;
+    width: 100px;
+}
+
+.ticket-inbox-select {
+    display: inline-block;
+}
+
+.form-group {
+    display: inline-block;
+}
+
+.status-select {
+    margin-left: 10px;
+}
+
+.ticket-row-avatar {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin-top:5px;
+}
+
+.total-count {
+    margin-top: 25px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+
+.export-btn, .export-btn:focus, .export-btn:active {
+    background-color: #772953;
+    border: 1px solid #772953;
+    display: inline-block;
+    margin-left: 5px;
+    outline: none;
+}
+
+.export-btn:hover {
+    background-color: #a83a75;
+    border: 1px solid #a83a75;
+    outline: none;
+}
+
+.loading-bar {
+    background-color: #772953;
+    height: 3px;
+}
+
+.loading {
+    font-size: 30px;
+  }
+  
+  .loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 1000ms infinite;      
+    animation: ellipsis steps(4,end) 1000ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+  }
+  
+  @keyframes ellipsis {
+    to {
+      width: 1.25em;    
+    }
+  }
+  
+  @-webkit-keyframes ellipsis {
+    to {
+      width: 1.25em;    
+    }
+  }

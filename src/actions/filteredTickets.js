@@ -1,0 +1,63 @@
+import axios from "axios";
+
+// Filtered Tickets actions. Used to populate the redux store. 
+// Functions can be mapped as props and then called from components to populate state and props.
+// Dispatch gets mapped from the redux store, allows you to dispatch actions. 
+
+// axios is an AJAX fetch engine which implements ES6 promises. Once the request has been completed the 'then' method will be called.  
+
+export const startSetFilteredTickets = (id, status) => {
+    return (dispatch, getState) => {
+        var url = `http://localhost:51424/api/tickets/`;
+        return axios({
+            method: "GET",
+            url: url,
+            params: {
+                id: id,
+                status: status
+            }
+        }).then((res) => {
+            const tickets = [];
+
+            if (getState().user.Authenticated) {
+                res.data.Tickets.forEach((ticket) => {
+                    tickets.push(ticket)
+                });
+            } else {
+                const filteredTickets = res.data.Tickets.filter((ticket) => ticket.Customer.Email === getState().user.EmailAddress)
+                filteredTickets.forEach((ticket) => tickets.push(ticket));
+            }
+             // Passes the array of tickets to the setTickets action. 
+            dispatch(setFilteredTickets(tickets));
+        }).catch((e) => console.log(e));
+    }
+}
+
+export const startSetSingleTicket = (id) => {
+    return (dispatch) => {
+        var url = `http://localhost:51424/api/tickets/`;
+        return axios({
+            method: "GET",
+            url: url,
+            params: {
+                id: id,
+                status: "search"
+            }
+        }).then((res) => {
+            const tickets = [];
+            res.data.forEach((ticket) => {
+                tickets.push(ticket)
+            });
+             // Passes the array of tickets to the setTickets action. 
+            dispatch(setFilteredTickets(tickets));
+        });
+    }
+}
+
+// This type of action will be called from the Tickets reducer, the filteredTickets will be passed to the reducer 
+// and then saved in the redux store as state, ready to be passed into component
+
+export const setFilteredTickets = (tickets) => ({
+    type: "SET_FILTERED_TICKETS",
+    tickets
+});

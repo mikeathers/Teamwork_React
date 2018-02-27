@@ -1,0 +1,17 @@
+.footer {
+    background-color: #ccc;
+    width: 100%;
+
+    clear: both;
+    z-index: 10;
+    height: 110px;
+    margin-bottom: -30px;
+}
+.img-div {
+    width: 50%; 
+    margin: 0 auto;
+}
+.footer img {
+    margin-top: 20px;
+    margin-left: 35%;
+}

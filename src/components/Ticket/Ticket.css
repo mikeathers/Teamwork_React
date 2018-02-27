@@ -1,0 +1,44 @@
+.ticket-id {
+    margin-top: 5px;
+}
+
+.ticket-header-table {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+
+.ticket-header-table td {
+    padding: 10px 0px;
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.active {
+    color: green;
+}
+
+.subject-div {
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid #999;
+}
+
+.envelope {
+    color: #999999;
+    font-size: 28px;
+    display: inline-block;
+    position: absolute;
+}
+.subject {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
